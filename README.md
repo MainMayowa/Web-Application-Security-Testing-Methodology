@@ -3,6 +3,14 @@ This document outlines the structured approach I use when testing web applicatio
 The methodology focuses on progressively understanding the application's attack surface, authentication model, authorization logic, and business workflows before attempting exploitation.
 Rather than relying solely on automated tools, the goal is to build a clear understanding of how trust boundaries are implemented within the system.
 
+```mermaid
+flowchart LR
+A[Stage 1: Recon & Attack Surface] --> B[Stage 2: Authentication & Session Analysis]
+B --> C[Stage 3: Authorization Testing]
+C --> D[Stage 4: Business Logic Testing]
+D --> E[Stage 5: Automated Scanning]
+```
+
 ## Stage 1 — Reconnaissance & Attack Surface Mapping
 The first step is to understand what parts of the system are exposed and accessible from an external perspective.
 This stage focuses on identifying the application's attack surface before interacting with its internal functionality.
@@ -77,6 +85,14 @@ Typical tools:
 ## Key Principle
 Understanding how an application is designed to function internally is often more valuable than simply running automated tools.
 Many impactful vulnerabilities arise from broken assumptions in system design rather than individual technical flaws.
+
+```mermaid
+flowchart LR
+User --> Browser
+Browser --> BackendAPI
+BackendAPI --> Database
+BackendAPI --> PaymentGateway
+```
 
 ## Core Testing Philosophy
 Security testing is most effective when the tester understands how the application is intended to function.
