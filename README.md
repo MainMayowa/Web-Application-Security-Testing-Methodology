@@ -22,18 +22,18 @@ Some of the tools used during this stage are:
 
 * subfinder  
 * httpx  
-* dev tools
+* Browser developer tools
 * dig  
 * nmap
 
-ALWAYS EMPHASIZE AND EXERCIZE THINKING OVER TOOLS
+Emphasis is always placed on understanding the system and identifying trust boundaries rather than relying solely on automated tools.
 
 
 ## Stage 2 — Authentication & Session Analysis
 Once the attack surface is understood, the next step is to analyze how the application manages identity and sessions.
-This is basically observing how users authenticate and how session state is maintained across requests.
+This stage involves observing how users authenticate and how session state is maintained across requests.
 
-Areas tested includes:
+Areas typically tested includes:
 
 * Login workflow behavior  
 * Token generation and structure  
@@ -47,7 +47,7 @@ After authentication behavior is understood, authorization logic is tested to de
 
 Typical tests:
 
-* Accessing resources belonging to other users(IDOR)
+* Accessing resources belonging to other users (IDOR)
 * Manipulating identifiers in requests
 * Accessing restricted endpoints
 * Role-based privilege escalation attempts
@@ -69,11 +69,16 @@ After manual testing has identified the application's key workflows and trust bo
 
 Typical tools:
 
-Nuclei  
-OWASP ZAP  
-Burp Scanner  
-Dependency scanners
+* Nuclei  
+* OWASP ZAP  
+* Burp Scanner  
+* Dependency scanners
 
 ## Key Principle
-Understanding how an application is designed to function is often more valuable than simply running automated tools.
+Understanding how an application is designed to function internally is often more valuable than simply running automated tools.
 Many impactful vulnerabilities arise from broken assumptions in system design rather than individual technical flaws.
+
+## Core Testing Philosophy
+Security testing is most effective when the tester understands how the application is intended to function.
+Rather than immediately searching for vulnerabilities, the objective is first to identify trust boundaries, data flows, and assumptions made by the system.
+Vulnerabilities often arise when these assumptions can be broken.
