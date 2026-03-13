@@ -1,5 +1,5 @@
 # Introduction
-This document outlines the structured approach I use when testing web applications for security vulnerabilities.
+This repository outlines the structured approach I use when testing web applications for security vulnerabilities.
 The methodology focuses on progressively understanding the application's attack surface, authentication model, authorization logic, and business workflows before attempting exploitation.
 Rather than relying solely on automated tools, the goal is to build a clear understanding of how trust boundaries are implemented within the system.
 
